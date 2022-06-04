@@ -37,11 +37,11 @@
   border-right: none;
 }
 
-.cross {
+.circle {
   background-image: url(/Assets/circle.png);
 }
 
-.circle {
+.cross {
   background-image: url(/Assets/cross.png);
 }
 
