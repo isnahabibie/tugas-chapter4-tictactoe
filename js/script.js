@@ -4,8 +4,6 @@ const boxElements = document.querySelectorAll(".box");
 const resetButton = document.getElementById("reset");
 let turn = cross;
 
-resetButton.onclick = startGame;
-
 function placeMark(box, currentClass) {
   box.classList.add(currentClass);
 }
@@ -22,22 +20,18 @@ function handleCLick(a) {
   }
 }
 
-resetButton.addEventListener("click", () => {
-  boxElements.forEach((box) => {
-    box.classList.remove("cross", "circle");
-  });
-});
-// function placeMark(box){
-//     box.classList.add(currentClass);
-// }
 function startGame() {
   boxElements.forEach((box) => {
-    // delete.style.backgroundColor = 'white';
-    // box.style.backgroundColor = 'none';
-    // placeMark(boxTarget)
-    // turn = false
+
     box.addEventListener("click", handleCLick, { once: true });
   });
 }
 
 startGame();
+
+resetButton.onclick = startGame;
+resetButton.addEventListener("click", () => {
+  boxElements.forEach((box) => {
+    box.classList.remove("cross", "circle");
+  });
+});
